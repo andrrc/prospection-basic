@@ -1,5 +1,6 @@
 import { Droplets } from "lucide-react";
 import productImage from "@/assets/aero_xpd100-removebg-preview.png";
+import { WHATSAPP_NUMBER } from "@/config/constants";
 
 interface ProductSpec {
   Viscosidade: string;
@@ -16,9 +17,8 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ name, tag, highlight, specs }: ProductCardProps) => {
-  const whatsappNumber = "5515996243489"; // Substitua pelo número real da empresa
   const message = `Olá, gostaria de solicitar uma cotação para o produto: *${name}* que vi no site.`;
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
   return (
     <div
@@ -37,7 +37,7 @@ const ProductCard = ({ name, tag, highlight, specs }: ProductCardProps) => {
             Destaque
           </span>
         )}
-        <img src={productImage} alt={name} className="h-full w-auto max-w-full object-contain mix-blend-multiply drop-shadow-[0_8px_16px_rgba(0,0,0,0.15)] transition-transform duration-300 group-hover:scale-105" />
+        <img src={productImage} alt={name} loading="lazy" className="h-full w-auto max-w-full object-contain mix-blend-multiply drop-shadow-[0_8px_16px_rgba(0,0,0,0.15)] transition-transform duration-300 group-hover:scale-105" />
       </div>
 
       {/* ZONA INFERIOR - INFORMAÇÕES */}

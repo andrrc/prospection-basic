@@ -1,6 +1,5 @@
 import { useState, FormEvent } from "react";
-
-const WHATSAPP_NUMBER = "5515999999999";
+import { WHATSAPP_NUMBER } from "@/config/constants";
 
 const products = [
   "A100 — Óleo de Amaciamento",
@@ -40,7 +39,7 @@ const ContactForm = ({ submitLabel = "Enviar Solicitação" }: ContactFormProps)
     // Validar campos obrigatórios
     const newErrors: Record<string, boolean> = {};
     if (!form.name.trim()) newErrors.name = true;
-    if (!form.email.trim()) newErrors.email = true;
+    if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) newErrors.email = true;
     if (!form.phone.trim()) newErrors.phone = true;
 
     if (Object.keys(newErrors).length > 0) {
