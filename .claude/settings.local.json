@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"sm:\\\\|md:\\\\|lg:\" /c/Users/AndreFilho/Desktop/prospection-basic/prospection-aero-hub/src/components/*.tsx)",
+      "Bash(grep -r \"sm:\\\\|md:\\\\|lg:\" /c/Users/AndreFilho/Desktop/prospection-basic/prospection-aero-hub/src/pages/*.tsx)",
+      "Bash(grep -rn \"<h[1-4]\" /c/Users/AndreFilho/Desktop/prospection-basic/prospection-aero-hub/src/components/*.tsx /c/Users/AndreFilho/Desktop/prospection-basic/prospection-aero-hub/src/pages/*.tsx)",
+      "Bash(rm src/pages/Index.tsx src/pages/Sobre.tsx src/pages/Contato.tsx src/pages/NotFound.tsx)",
+      "Bash(rmdir src/pages)",
+      "Bash(rm src/components/ScrollToTop.tsx src/components/NavLink.tsx src/components/PageHero.tsx)",
+      "Bash(grep -v \"^tooltip.tsx$\")",
+      "Bash(xargs rm:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
